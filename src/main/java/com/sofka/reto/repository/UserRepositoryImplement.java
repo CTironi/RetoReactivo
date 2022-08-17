@@ -1,31 +1,37 @@
 package com.sofka.reto.repository;
 
-import com.sofka.reto.controller.UserController;
 import com.sofka.reto.model.User;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 @Repository
-public abstract class UserRepositoryImplement implements UserRepository {
+public class UserRepositoryImplement implements UserRepository {
 
-    private static final Logger log = (Logger) LoggerFactory.getLogger(UserController.class);
+
+    @Override
+    public Mono<org.apache.catalina.User> create(org.apache.catalina.User user) {
+        return null;
+    }
+
+    @Override
+    public Mono<org.apache.catalina.User> update(org.apache.catalina.User user) {
+        return null;
+    }
 
     @Override
     public Mono<User> create(User user) {
-        log.info(user.toString());
+        System.out.println(user.toString());
         Mono<User> create = Mono.just(user);
         return create;
     }
 
     @Override
     public Mono<User> update(User user) {
-        log.info(user.toString());
+        System.out.println(user.toString());
         Mono<User> update = Mono.just(user);
         return update;
     }

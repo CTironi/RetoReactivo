@@ -1,5 +1,10 @@
 package com.sofka.reto.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+
+
+@Document("/users")
 public class User {
     private Integer userID;
     private String nombre;
